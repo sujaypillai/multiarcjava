@@ -1,6 +1,6 @@
 # syntax=docker/dockerfile:1.4
 FROM --platform=$BUILDPLATFORM openjdk:18-jdk as builder
-RUN apk add bintuils
+RUN apk add binutils
 COPY hello.java .
 RUN javac hello.java
 RUN jdeps --print-module-deps hello.class > java.modules
