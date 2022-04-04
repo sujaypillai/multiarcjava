@@ -24,10 +24,10 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       
-      - name: Docker build
+      - name: Docker build and push
         uses: docker/build-push-action@v2
         with:
-          push: ${{ github.event_name != 'pull_request' }}
+          push: true
           tags: sujaypillai/javaapp:multiarc-1.0
           cache-from: type=gha
           cache-to: type=gha,mode=max
