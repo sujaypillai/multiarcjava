@@ -37,7 +37,7 @@ jobs:
           platforms: linux/amd64,linux/arm64,linux/riscv64,linux/ppc64le,linux/s390x,linux/386,linux/mips64le,linux/mips64,linux/arm/v7,linux/arm/v6
           
       - name: Docker build with SBOM
-        run: docker buildx build --cache-from type=gha --secret id=GIT_AUTH_TOKEN,src=/tmp/docker-build-push-bEd3Gl/tmp-2832-TfcGC6Qo6Gph --tag sujaypillai/javaapp:multiarc-1.0 --metadata-file /tmp/docker-build-push-bEd3Gl/metadata-file -o sbom
+        run: docker buildx build --cache-from type=gha --secret id=GIT_AUTH_TOKEN,src=/tmp/docker-build-push-bEd3Gl/tmp-2832-TfcGC6Qo6Gph --tag sujaypillai/javaapp:multiarc-1.0 --metadata-file /tmp/docker-build-push-bEd3Gl/metadata-file -o sbom .
               
       - name: Print SBOM
         run: cat sbom.txt 
