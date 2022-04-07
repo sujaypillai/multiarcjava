@@ -40,7 +40,7 @@ jobs:
         run: docker buildx build --cache-from type=gha --tag sujaypillai/javaapp:multiarc-1.0 -o sbom https://github.com/sujaypillai/multiarcjava.git#49957b0f1adf8ce8fa53a1aa9bfc8988b639d8af
               
       - name: Print SBOM
-        run: cat sbom.txt 
+        run: cat $(pwd)/sbom.txt 
         
       - name: Print SBOM
         run: docker sbom sujaypillai/javaapp:multiarc-1.0
