@@ -45,6 +45,3 @@ jobs:
       - name: Print SBOM
         run: cat sbom/sbom.txt  
         
-      - name: Print SBOM
-        run: docker sbom sujaypillai/javaapp:multiarc-1.0
-
