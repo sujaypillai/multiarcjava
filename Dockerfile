@@ -5,7 +5,7 @@ COPY hello.java .
 RUN javac hello.java
 RUN jdeps --print-module-deps hello.class > java.modules
 RUN jlink --strip-debug --add-modules $(cat java.modules) --output /java
-
+# AUTO BUILD
 FROM --platform=$BUILDPLATFORM alpine
 COPY --from=builder /java /java
 COPY --from=builder hello.class .
