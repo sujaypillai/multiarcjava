@@ -36,8 +36,10 @@ jobs:
           cache-to: type=gha,mode=max
           platforms: linux/amd64,linux/arm64,linux/riscv64,linux/ppc64le,linux/s390x,linux/386,linux/mips64le,linux/mips64,linux/arm/v7,linux/arm/v6
           
-      - name: Docker build with SBOM
+      - name: Checkout the code
         uses: actions/checkout@v3.3.0
+
+      - name: Docker build with SBOM
         run: docker buildx build --cache-from type=gha --sbom=true --tag sujaypillai/javaapp-withsbom:1.0 --push .
               
       - name: List SBOM
