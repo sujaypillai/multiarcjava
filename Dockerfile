@@ -1,4 +1,4 @@
-# syntax=crazymax/dockerfile:sbom
+# syntax=docker/dockerfile:1.5
 FROM --platform=$BUILDPLATFORM openjdk:15-alpine as builder
 RUN apk add binutils
 COPY hello.java .
